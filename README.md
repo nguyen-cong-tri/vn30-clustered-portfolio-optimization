@@ -16,12 +16,6 @@ Kho ma nguon cong khai phuc vu tai lap nghien cuu ve xay dung va toi uu hoa danh
 - `reports/backtest_rolling/`: artifact backtest rolling ngoai mau
 - `tests/`: test cho helper va notebook contract
 
-## Khong dua vao repo public nay
-
-- `memory-bank/`
-- `docs/superpowers/`
-- `reports/report_draft/`
-- cac file tong hop va workflow noi bo
 
 ## Cai dat
 

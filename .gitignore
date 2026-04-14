@@ -12,3 +12,5 @@ tmp_pytest*/
 __pycache__/
 *.py[cod]
 tests/tmp*/
+EDA_REPORT.md
+.gitignore
