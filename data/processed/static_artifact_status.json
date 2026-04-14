@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "run_timestamp": "2026-04-04T12:44:51.168807+00:00",
+  "gmv": {
+    "solver_status": "optimal",
+    "feasible": true,
+    "exported": true,
+    "canonical_path": "D:\\Archive\\NCKH\\CODE\\vn30-ver1 - Copy\\data\\processed\\portfolio_weights_static.csv"
+  },
+  "aggressive": {
+    "solver_status": "optimal",
+    "feasible": true,
+    "exported": true,
+    "canonical": true,
+    "canonical_path": "D:\\Archive\\NCKH\\CODE\\vn30-ver1 - Copy\\data\\processed\\portfolio_weights_aggressive.csv",
+    "legacy_path": "D:\\Archive\\NCKH\\CODE\\vn30-ver1 - Copy\\data\\processed\\legacy\\portfolio_weights_aggressive_prefeasibility.csv",
+    "reason_if_not_canonical": null
+  }
+}

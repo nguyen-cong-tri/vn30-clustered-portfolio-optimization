@@ -1,0 +1,14 @@
+.venv/
+.ipython/
+.jupyter_config/
+.jupyter_data/
+.jupyter_runtime/
+.pytest_cache/
+.pytest-tmp/
+.tmp/
+.tmp_pytest*/
+tmp_pytest*/
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+tests/tmp*/

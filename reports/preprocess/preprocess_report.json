@@ -1,0 +1,122 @@
+{
+  "paths": {
+    "input_path": "d:\\Workspace\\Mon_Hoc\\datamining\\final-project\\vn30-ver1\\data\\raw\\vn30_stock_data.csv",
+    "output_clean_path": "d:\\Workspace\\Mon_Hoc\\datamining\\final-project\\vn30-ver1\\data\\processed\\clean_ohlcv.csv",
+    "output_report_path": "d:\\Workspace\\Mon_Hoc\\datamining\\final-project\\vn30-ver1\\reports\\preprocess\\preprocess_report.json"
+  },
+  "overview_before": {
+    "rows": 43932,
+    "n_symbols": 30,
+    "n_days": 1476,
+    "date_min": "2020-01-02 00:00:00",
+    "date_max": "2025-11-28 00:00:00",
+    "missing_by_col": {
+      "date": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "open": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "high": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "low": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "close": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "volume": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "symbol": {
+        "count": 0,
+        "percent": 0.0
+      }
+    },
+    "duplicate_count": 0
+  },
+  "cleaning_steps": {
+    "duplicates_removed": 0,
+    "missing_removed_total": 0,
+    "missing_removed_by_col": {
+      "date": 0,
+      "symbol": 0,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "volume": 0
+    },
+    "invalid_removed_by_rule": {
+      "open_le_0": 0,
+      "high_le_0": 0,
+      "low_le_0": 0,
+      "close_le_0": 0,
+      "volume_lt_0": 0,
+      "high_lt_low": 0,
+      "high_lt_max_open_close": 0,
+      "low_gt_min_open_close": 2
+    },
+    "rows_after_each_step": {
+      "after_dedup": 43932,
+      "after_missing": 43932,
+      "after_validation": 43930
+    }
+  },
+  "overview_after": {
+    "rows": 43930,
+    "n_symbols": 30,
+    "n_days": 1476,
+    "date_min": "2020-01-02 00:00:00",
+    "date_max": "2025-11-28 00:00:00",
+    "missing_by_col": {
+      "date": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "open": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "high": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "low": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "close": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "volume": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "symbol": {
+        "count": 0,
+        "percent": 0.0
+      }
+    },
+    "duplicate_count": 0,
+    "per_symbol_row_count_stats": {
+      "min": 1172,
+      "median": 1476,
+      "max": 1476
+    },
+    "n_symbols_with_low_coverage": 1
+  },
+  "notes": [
+    "Preprocessing only, no feature engineering performed.",
+    "No market-level aggregation or filling of missing trading days.",
+    "All removed rows are tracked and reported."
+  ]
+}

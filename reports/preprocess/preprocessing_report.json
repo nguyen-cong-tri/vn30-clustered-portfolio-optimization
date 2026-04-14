@@ -1,0 +1,107 @@
+{
+  "preprocessing_date": "2026-04-03 11:01:59",
+  "input_file": "d:\\Archive\\NCKH\\CODE\\vn30-ver1\\data\\raw\\vn30_stock_data.csv",
+  "output_file": "d:\\Archive\\NCKH\\CODE\\vn30-ver1\\data\\processed\\clean_ohlcv.csv",
+  "canonical_output_schema": [
+    "date",
+    "ticker",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "range_ratio",
+    "is_range_outlier",
+    "is_volume_outlier"
+  ],
+  "original_data": {
+    "rows": 43932,
+    "tickers": 30,
+    "date_min": "2020-01-02 00:00:00",
+    "date_max": "2025-11-28 00:00:00"
+  },
+  "universe_after_filter": {
+    "rows": 42760,
+    "tickers": 29,
+    "date_min": "2020-01-02 00:00:00",
+    "date_max": "2025-11-28 00:00:00",
+    "trading_days": 1476
+  },
+  "final_data": {
+    "rows": 41644,
+    "tickers": 29,
+    "date_min": "2020-01-02 00:00:00",
+    "date_max": "2025-11-28 00:00:00",
+    "trading_days": 1436
+  },
+  "summary_counts": {
+    "raw_rows": 43932,
+    "raw_tickers": 30,
+    "post_universe_rows": 42760,
+    "post_universe_tickers": 29,
+    "duplicates_removed": 0,
+    "full_row_duplicates_before": 0,
+    "date_ticker_duplicates_before": 0,
+    "ohlc_invalid_removed": 2,
+    "missing_removed": 0,
+    "incomplete_days_found": 40,
+    "incomplete_days_removed": 40,
+    "incomplete_rows_removed": 1114,
+    "final_rows": 41644,
+    "final_tickers": 29,
+    "final_trading_days": 1436,
+    "zero_volume_rows_observed": 1,
+    "zero_volume_rows_kept": 0
+  },
+  "cleaning_steps": {
+    "step1_removed_ssb": "Removed SSB from universe (VN30 -> VN29)",
+    "step2_duplicates_removed": "Removed 0 rows via full-row and (date, ticker) dedup guard",
+    "step3_invalid_ohlc_removed": "Removed 2 rows with OHLC/basic-value violations",
+    "step4_missing_removed": "Removed 0 rows with missing required values",
+    "step5_incomplete_days_removed": "Removed 40 days and 1114 rows with < 29 tickers to create a balanced panel",
+    "step6_outliers_flagged": "Flagged 417 range outliers and 417 volume outliers without removing them"
+  },
+  "coverage_by_ticker": {
+    "threshold_pct": 90.0,
+    "low_coverage_tickers": [],
+    "decision": "No additional ticker removed after SSB; remaining universe coverage is acceptable."
+  },
+  "coverage_by_day": {
+    "expected_tickers": 29,
+    "incomplete_days_found": 40,
+    "incomplete_days_pct": 2.71,
+    "incomplete_days_removed": 40,
+    "incomplete_rows_removed": 1114,
+    "decision": "Drop 40 incomplete days to create a balanced 29-ticker panel.",
+    "note_vs_raw_eda": "Counts can differ from raw EDA because preprocess uses VN29 universe and the balanced-panel rule < 29 tickers/day."
+  },
+  "zero_volume_policy": {
+    "observed_rows": 1,
+    "kept_rows": 0,
+    "removed_due_to_other_rules": 1,
+    "policy": "Keep volume == 0 rows only if they remain valid under OHLC/basic-value checks."
+  },
+  "data_quality": {
+    "tickers_per_day_min": 29,
+    "tickers_per_day_median": 29,
+    "tickers_per_day_max": 29,
+    "days_with_full_coverage": 1436
+  },
+  "eda_informed_decisions": {
+    "raw_data_status": "Raw data is relatively clean: no duplicate, no missing, no parse-error issue in the current snapshot.",
+    "main_issues": [
+      "Coverage inconsistency is the main panel-level issue.",
+      "A very small number of volume == 0 rows should be kept only if otherwise valid.",
+      "OHLC-invalid rows are treated as data errors and removed.",
+      "SSB is excluded because IPO timing makes its history materially shorter than the research universe."
+    ],
+    "research_universe_note": "The clean panel is designed for return, correlation, clustering, and optimization notebooks downstream."
+  },
+  "notes": [
+    "SSB removed due to materially shorter history / IPO timing.",
+    "Outliers flagged but not removed for downstream handling.",
+    "All OHLC validation rules passed in the final clean dataset.",
+    "No missing values remain in required core columns.",
+    "Balanced 29-ticker panel created for downstream modeling."
+  ]
+}
